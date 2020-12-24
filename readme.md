@@ -1,6 +1,6 @@
 A tool for calculating probabilities of winning in the board game Risk. Assume that fights are until either the defender is eliminated, or attacker is left with 1 army, and that all players roll the maximum number of dice possible.
 
-Usage:
+# Usage
 
 `printrisk(atk,def)` where `atk` is the attacker army size, and `def` is the defender army size. 
 
@@ -23,3 +23,9 @@ lose    0.5234691
 
 * Negatives mean that defender wins with that many armies remaining, and attacker has 1 army left.
 * Positives mean that the attacker wins with that many armies left, INCLUDING the army that stays behind. (This is why 0 and 1 will not occur.)
+
+# Implementation details
+
+Probabilities of individual battle outcomes are hardcoded in `probs`.
+
+Uses dynamic programming, done "automatically" in the `Memo` monad.
